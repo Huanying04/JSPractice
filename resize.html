@@ -41,7 +41,7 @@
             b.onclick = function() {
                 if (f.files.length != 0) {
                     const val = m.value;
-                    if (!isNaN(Number(val))) {
+                    if (!isNaN(Number(val)) && val != "") {
                         var c = document.getElementById('c');
                         var ctx = c.getContext("2d");
                         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
