@@ -39,18 +39,20 @@
             }
 
             b.onclick = function() {
-                const val = m.value;
-                if (!isNaN(Number(val))) {
-                    var c = document.getElementById('c');
-                    var ctx = c.getContext("2d");
-                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                    c.style.width = img.width * Number(val) / 100;
-                    c.style.height = img.height * Number(val) / 100;
-                    ctx.canvas.width = img.width * Number(val) / 100;
-                    ctx.canvas.height = img.height * Number(val) / 100;
-                    ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height);
-                }else {
-                    window.alert("輸入數字");
+                if (f.files.length != 0) {
+                    const val = m.value;
+                    if (!isNaN(Number(val))) {
+                        var c = document.getElementById('c');
+                        var ctx = c.getContext("2d");
+                        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                        c.style.width = img.width * Number(val) / 100;
+                        c.style.height = img.height * Number(val) / 100;
+                        ctx.canvas.width = img.width * Number(val) / 100;
+                        ctx.canvas.height = img.height * Number(val) / 100;
+                        ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height);
+                    }else {
+                        window.alert("輸入數字");
+                    }
                 }
             }
 
